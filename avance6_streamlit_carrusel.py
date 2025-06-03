@@ -81,10 +81,10 @@ if not df_et.empty:
     p_value = anova_result.pvalue
     f_squared = (f_stat * (len(estimulos) - 1)) / (len(df_et) - len(estimulos)) if len(estimulos) > 1 else None
 
-    estad_txt = f"ANOVA F-statistic: {f_stat:.4f}
-"
-    estad_txt += f"p-value: {p_value:.4e}
-"
+    estad_txt = f"ANOVA F-statistic: {f_stat:.4f}\\n"
+    estad_txt += f"p-value: {p_value:.4e}\\n"
+    
+    
     if f_squared:
         estad_txt += f"F-squared: {f_squared:.4f}
 "
