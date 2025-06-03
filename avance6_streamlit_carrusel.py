@@ -26,9 +26,8 @@ def read_imotions_csv(file, participant_name, header_index, tipo):
     content = file.read().decode('utf-8')
     lines = content.splitlines()
     headers = make_unique(lines[header_index].strip().split(","))
-    data = "
-".join(lines[header_index + 1:])
-    df = pd.read_csv(BytesIO(data.encode()), names=headers)
+    data = "\n".join(lines[header_index + 1:])
+    df = pd.read_csv(StringIO(data), names=headers)
     df["Participant"] = participant_name
     df["Tipo"] = tipo
     return df
